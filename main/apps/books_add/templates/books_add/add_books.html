@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/books/add_books" method="post">
+        {% csrf_token %}
+        <input type="text" name="title" id="title" class="form-control input-sm" placeholder="Title"value="{{Book.title}}">
+        <input type="text" name="desc" id="desc" class="form-control input-sm" placeholder="Description"value="{{Book.desc}}">
+        <button type="submit">Add Book</button>
+    </form>
+    
+    
+            {%for x in Book%}
+            {{x.title}}
+            {%endfor%}
+    <a href="/logOut"><button>Logout</button></a>
+    <a href="/profile"><button>Home</button></a>
+</body>
+</html>
